@@ -93,11 +93,10 @@ class MoteLights():
         mote.clear()
         mote.show()
 
-class StephStreamListener(tweepy.StreamListener):
-    lights = MoteLights()
+lights = MoteLights()
 
+class StephStreamListener(tweepy.StreamListener):
     def on_connect(self):
-        global lights
         lights.ocean_waves()
 
     # if a tweet is favorited, i'm followed or retweet is quoted, go pink
